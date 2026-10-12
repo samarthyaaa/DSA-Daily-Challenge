@@ -1,21 +1,22 @@
-def findMinLength(target, nums):
-    left = 0
-    total = 0
-    ans = len(nums) + 1
+class Solution:
+    def minSubArrayLen(self, target, nums):
+        start = 0
+        summ = 0
+        smallest = len(nums) + 1
 
-    for right in range(len(nums)):
-        total += nums[right]  # Add the next number
+        for end in range(len(nums)):
+            summ += nums[end]  # Add the next number
 
-        while total >= target:
-            length = right - left + 1
+            while summ >= target:
+                length = end - start + 1
 
-            if length < ans:
-                ans = length  # Save the smaller length
+                if length < smallest:
+                    smallest = length  # Save the smaller length
 
-            total -= nums[left]  # Remove the first number
-            left += 1  # Move left forward
+                summ -= nums[start]  # Remove the first number
+                start += 1  # Move start forward
 
-    if ans == len(nums) + 1:
-        return 0  # No valid subarray found
+        if smallest == len(nums) + 1:
+            return 0  # No valid subarray found
 
-    return ans
+        return smallest
