@@ -1,19 +1,21 @@
+class Solution:
+    def findAnagrams(self, s, p):
+        ans = []                 # Store starting indices
+        n = len(s)               
+        m = len(p)             
 
-def findMatch(s, p):
-    ans = []
-    n = len(s)
-    m = len(p)
-    for i in range(n - m + 1): # Check each possible window
-        a = [0] * 26
-        b = [0] * 26
-      
-        for j in range(m): # Count characters
-            for k in range(26):
-                if s[i + j] == chr(k + 97):
-                    a[k] += 1
-                if p[j] == chr(k + 97):
-                    b[k] += 1
-        if a == b: # Check if both match
-            ans.append(i)
+        for i in range(n - m + 1): 
+            a = [0] * 26         # Count s characters
+            b = [0] * 26         # Count p characters
 
-    return ans
+            for j in range(m):
+                for k in range(26):
+                    if s[i + j] == chr(k + 97):
+                        a[k] += 1    # Count window letter
+                    if p[j] == chr(k + 97):
+                        b[k] += 1    # Count p letter
+
+            if a == b:            # Check if anagram
+                ans.append(i)     # Save starting index
+
+        return ans               
