@@ -1,4 +1,3 @@
-
 class Solution:
     def mergeSort(self, arr, l, r):
         if l < r:
