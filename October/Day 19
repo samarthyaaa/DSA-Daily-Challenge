@@ -1,0 +1,20 @@
+class Solution:
+    def quickSort(self, arr):
+        # Stop if the list has 0 or 1 element
+        if len(arr) <= 1:
+            return arr
+
+        # Choose the first element as pivot
+        pivot = arr[0]
+        left = []
+        right = []
+
+        # Separate elements around the pivot
+        for i in range(1, len(arr)):
+            if arr[i] <= pivot:
+                left.append(arr[i])  # Smaller elements
+            else:
+                right.append(arr[i])  # Greater elements
+
+        # Sort both sides and combine them
+        return self.quickSort(left) + [pivot] + self.quickSort(right)
