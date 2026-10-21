@@ -1,24 +1,28 @@
 class Solution:
     def findKthLargest(self, nums, k):
+        low=0
+        high=len(arr)-1
+        target=len(arr)-k
+        while low<=high:
+            p=self.partition(arr,low,high)
+            if p == target:
+                return arr[p]
+            elif p < target:
+                low=p+1
+            else:
+                high=p-1
 
-        def partition(low, high):
+        def partition(self,arr,low, high):
             pivot = nums[high]
-            i = low - 1
+            i = low 
 
             for j in range(low, high):
-                if nums[j] <= pivot:
-                    i += 1
-                    nums[i], nums[j] = nums[j], nums[i]
+                if arr[j]<=pivot:
+                    temp=arr[i]
+                    arr[i]=arr[j]
+                    arr[j]=temp
+           temp=arr[j]
+           arr[i]=arr[high]
+           arr[high]=temp
+    return i
 
-            nums[i + 1], nums[high] = nums[high], nums[i + 1]
-            return i + 1
-
-        def quick_sort(low, high):
-            if low < high:
-                pi = partition(low, high)
-
-                quick_sort(low, pi - 1)
-                quick_sort(pi + 1, high)
-
-        quick_sort(0, len(nums) - 1)# Sort the array using Quick Sort
-        return nums[len(nums) - k] # Return the kth largest element
