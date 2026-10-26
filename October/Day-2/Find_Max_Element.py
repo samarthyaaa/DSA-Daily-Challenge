@@ -6,4 +6,6 @@ class Solutions:
         max=i
     return max
 time complexity:O(n)
-      
+nums=[4,8,6,33]
+s=Solutions()
+print(s.findsecmax(nums))
