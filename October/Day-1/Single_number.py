@@ -16,3 +16,12 @@ s=Solutions()
 print(s.single_number(nums))
 time complexity: O(n**2)
 
+Optimal Solution:
+class Solution(object):
+    def singleNumber(self, nums):
+        ans=0
+        for i in nums:
+            ans=ans^i
+        return ans
+timw complexity: O(n)
+      
