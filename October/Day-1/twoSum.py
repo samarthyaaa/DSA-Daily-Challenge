@@ -17,19 +17,15 @@ print(s.twoSum(nums,target))
 Time Complexity=O(n**2)
 
 Optimal method:
-
 class Solution(object):
     def twoSum(self, nums, target):
-        left,right=0,len(nums)-1
-        while left < right:
-            total= nums[left]+ nums[right]
-            if total==target:
-                return[left,right] 
-            elif total>target:
-                right= right-1
-            else:
-                left= left+1
-        return []
+        seen = {}
+        for i in range(len(nums)):
+            needed = target - nums[i]
+            if needed in seen:
+                return [seen[needed], i]
+            seen[nums[i]] = i
+
 nums=[2,7,11,15]
 target=9
 s=Solution()
