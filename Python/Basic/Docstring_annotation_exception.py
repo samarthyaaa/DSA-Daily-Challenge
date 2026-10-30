@@ -17,16 +17,33 @@ print(help(Dog)) # global fn to get the info about the complete code
 count: int = 0"""
 #Exceptions
 try:
-    result=2/0
-    #some line of codes
-except ZeroDivisionError:
-    print("You can't divide by zero")
-    #handler <ERROR1>
-#except<ERROR2>:
-    #handler <ERROR2>
-#else:
-    #no exception are raised , the code ran successfully
+    # code that raise an error
+    result=10/0
+except zerodivisionerror:
+    print("cannot divide by zero")
+except typeerror:
+    print("type error occurred")
+except exception as error:
+    print(f"an unexpected error occurred: {error}")
+else:
+    # executes only if no exception occurred in the try block
+    print("no errors occurred successfully executed")
 finally:
-    result = 1
-    #do something in any case
-print(result)
+    print("cleanup complete executing finally block")
+
+
+
+# raise keyword is used to trigger custom errors manually
+try:
+    raise exception("custom exception raised manually")
+except exception as error:
+    print(error)
+
+# inherit from builtin Exception class to define custom exception types
+class dognotfoundexception(exception):
+    pass
+
+try:
+    raise dognotfoundexception()
+except dognotfoundexception:
+    print("dog was not found")
