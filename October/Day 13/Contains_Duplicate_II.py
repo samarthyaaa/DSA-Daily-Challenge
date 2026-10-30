@@ -1,8 +1,13 @@
 class Solution(object):
-    def checkDuplicate(self, nums, k):
-        d={} # stores index
-        for i in range(len(nums)): # Check numbers
-            if nums[i] in d and i-d[nums[i]] <=k: 
+    def containsNearbyDuplicate(self, nums, k):
+        left=0
+        seen=set()
+        for right in range(len(nums)):
+            if nums[right] in seen:
                 return True
-            d[nums[i]]=i # update index
-        return False # no duplicate
+            seen.add(nums[right])
+            if right-left>=k:
+                seen.remove(nums[left])
+                left+=1
+        return False
+        
