@@ -1,43 +1,39 @@
-# To open a file and read content of it or write content such binary data files or csv files
-"""
-with open('notes.txt', 'w') as f:
-    f.write('Hello World')
-
-file=open('notes.txt','w')
-try:
-    file.write('Hello World')
-finally:
-    file.close()
-#context manager for threading
-from threading import Lock
-lock=Lock()
-
-lock.acquire()
-#... lines od codes
-lock.release()# need to write otherwise would cause deadlock
-# other approach
-with lock:
-    #... here no need to mention
-"""
-#context manager for own classes
+# context managers handle the setup and teardown of resources efficiently
+# standard file handling using context manager
+with open("notes.txt","w") as file:
+    file.write("some todo...")
+# custom context manager class
+#implementing a custom context manager class using __enter__ and __exit__ methods
 class ManagedFile:
-        def __init__(self, filename):
-            self.filename = filename
-        def __enter__(self):
-            print('enter')
-            self.file = open(self.filename, 'w')
-            return self.file
+    def __init__(self,filename):
+        self.filename=filename
 
-        def __exit__(self, exc_type, exc_val, exc_tb):
-            if self.file:
-                self.file.close()
-            if exc_type is not None:
-                print('exception type')
-            #print(exc_type, exc_val, exc_tb)
-            print('exit')
-            return True
-    with ManagedFile('notes.txt') as f:
-        print("do some stuff....")
-        file.write('Hello World')
-        file.somemethod()
-    print('continuing')
+    def __enter__(self):
+        print("enter")
+        self.file=open(self.filename,"w")
+        return self.file
+
+    def __exit__(self,exc_type,exc_val,exc_tb):
+        if self.file:
+            self.file.close()
+        print("exit")
+        # returning True
+        return True
+with ManagedFile("notes.txt") as file:
+    print("doing some work...")
+    file.write("some todo...")
+# context manager using contextlib generator
+from contextlib import contextmanager
+@contextmanager
+def open_managed_file(filename):
+    print("enter")
+    file=open(filename,"w")
+    try:
+        yield file
+    finally:
+        file.close()
+        print("exit")
+
+with open_managed_file("notes.txt") as f:
+    print("doing work with generator context manager...")
+    f.write("some todo...")
