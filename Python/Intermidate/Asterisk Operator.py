@@ -1,26 +1,28 @@
-# * sign in python - multiplication , args, kwargs, keyword only parameters for unpacking lists, containers into a list
-result = 2**4
-print(result)
-
-zeros=[0]*5 # can use tuple, string , list
-print(zeros)
-
-def fool(a,b,*args,**kwargs): # (a,b, *,c): keywrd arg after asterisk so need to key=value
-    print(a,b)
+# asterisk operator (*) in python
+print(2*3) # multiplication
+print(2**3) #exponentiation
+# unpacking lists or tuples into function positional arguments
+def add(a,b,c):
+    return a+b+c
+numbers=[1,2,3]
+print(add(*numbers)) # * unpacks list elements into positional arguments (prints 6)
+# collecting positional arguments (*args) in function definitions
+def print_all(*args):
     for arg in args:
         print(arg)
-    for key in kwargs:
-        print(key,kwargs[key])
-fool(1,2,3,hun=100)
+print_all("apple","banana","cherry")
+# tuple unpacking with extended iterable unpacking
+my_tuple=(1,2,3,4,5)
+a,*b,c=my_tuple
 
-# for dictionary
-def fool1(a,b,c):
-    print(a,b,c)
-dict={'a':1,'b':2,'c':3}
-fool(**dict)
+print(a) # prints 1
+print(b) # prints [2, 3, 4] as a list
+print(c) # prints 5
 
-#unpacking elements at last
-numbers=[1,2,3,4,5]
-*beginning,last=numbers # beignning, *middle, secondlast,last= num - can also perform diff combn
-print(beginning)# will print all other elements in a list
-print(last)# will print the last element
+# merging lists using * operator
+list1=[1,2,3]
+list2=[4,5,6]
+merged_list=[*list1,*list2]
+print(merged_list) #[1, 2, 3, 4, 5, 6]
+
+
