@@ -18,13 +18,13 @@ name = "Beau"; age = 39# we can write multiple statements in one line using ;
 # it is important because it shows which code belongs together
 # OPERATORS IN PYTHON
 # ARITHMETIC OPERATORS
-result=1 + 1 #2
-result=2 - 1 #1
-result=2 * 2 #4
-result=4 / 2 #2.0
-result=4 % 3 #1
-result=2 ** 3 #8
-result=5 // 2 #2
+result=1+1 #2
+result=2-1 #1
+result=2*2 #4
+result=4/2 #2.0
+result=4%3 #1
+result=2**3 #8
+result=5//2 #2
 # ASSIGNMENT OPERATORS
 # =
 age = 8
@@ -105,7 +105,7 @@ join()
 find()
 # STRING INDEXING & SLICING
 # index number
-name = "Beau Carnes"
+name="Beau Carnes"
 print(name[0])  
 print(name[1])  
 print(name[-1]) 
