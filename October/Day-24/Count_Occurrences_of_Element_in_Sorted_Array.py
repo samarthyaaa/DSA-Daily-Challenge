@@ -1,3 +1,11 @@
+Brute force:
+def countOccurrences(nums, target):
+    count = 0
+    for i in range(len(nums)):
+        if nums[i] == target:
+            count += 1
+    return count
+optimal solution:
 def countOccurrences(nums, target):
     def findFirst():
         left = 0
@@ -32,9 +40,7 @@ def countOccurrences(nums, target):
                 left = mid + 1
             else:
                 right = mid - 1
-
         return ans
-
     first = findFirst()
     last = findLast()
 
