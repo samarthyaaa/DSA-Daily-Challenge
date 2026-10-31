@@ -1,3 +1,11 @@
+Brute force:
+class Solution:
+    def searchInsert(self, nums, target):
+        for i in range(len(nums)):
+            if nums[i] >= target:
+                return i
+        return len(nums)
+Optimal solution:
 def binary_search(arr, target):
     lo=0, hi=len(arr) - 1
     while lo <= hi:                     
