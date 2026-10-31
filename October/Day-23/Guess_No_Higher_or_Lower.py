@@ -1,3 +1,8 @@
+for i in range(1, n + 1):
+    result = guess(i)
+    if result == 0:
+        return i
+Optimal solution:
 class Solution(object):
     def guessNumber(self, n):
         low,high=1,n
