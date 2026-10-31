@@ -1,7 +1,14 @@
+class Solution:
+    def search(self, nums, target):
+        for i in range(len(nums)):
+            if nums[i] == target:
+                return i
+        return -1
+Optimal solution:
 def binary_search(arr, target):
     lo=0, hi=len(arr) - 1
     while lo <= hi:                     
-        mid = lo + (hi - lo) // 2       # divides the array in two halfs
+        mid = lo + (hi - lo) // 2 #divides the array in two halfs
         if arr[mid] == target:
             return mid
         if arr[mid] < target:
