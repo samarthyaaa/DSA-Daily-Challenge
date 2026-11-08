@@ -13,5 +13,5 @@ class Solution(object):
                 word_count=0
             i+=1
         return char_count
-Time complexity: O(n)
+Time complexity: O(n
 Space Complexity: O(1)
