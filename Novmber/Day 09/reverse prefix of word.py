@@ -16,7 +16,6 @@ if index != -1:
 
     for i in range(index + 1, len(word)):
         ans += word[i]
-
     print(ans)
 
 else:
