@@ -1,5 +1,4 @@
 s = "the sky is blue"
-
 words = []
 word = ""
 
@@ -10,12 +9,9 @@ for ch in s:
         if word != "":
             words.append(word)
             word = ""
-
 if word != "":
     words.append(word)
-
 ans = ""
-
 for i in range(len(words)-1, -1, -1):
     ans += words[i] + " "
 
