@@ -24,5 +24,5 @@ print(dict)
 dict1 = {"name":"Max","age":28,"city":"London"}
 dict2 = {"name":"Madiline","age":32,"city":"Berlin"}
 dict1.update(dict2)
-print(dict1)# all the values are updated to dictionary values
-# we can use number and tuple as keys but list is not possible
+print(dict1)#all the values are updated to dictionary values
+#we can use number and tuple as keys but list is not possible
