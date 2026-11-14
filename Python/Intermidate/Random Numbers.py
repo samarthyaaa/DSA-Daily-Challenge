@@ -16,7 +16,7 @@ print(e)
 print(f)
 print(list1)
 
-random.seed(1) # exactly same no with same arg
+random.seed(1) # exactly same no 
 print(random.random())
 print(random.randint(1,10))
 random.seed(2)
