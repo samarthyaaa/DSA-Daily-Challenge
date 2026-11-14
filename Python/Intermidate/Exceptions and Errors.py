@@ -1,5 +1,5 @@
 #Exceptions - occurs when different errors occurs due to some syntax , indentation , key-value , file, index, KeyboardInterrupt error
-#raising an exception - to raise an exceptions intenionally
+#raising an exception - to raise an exceptions intenionall
 try:
     result=2/0
     #some line of codes # where the actual code runs
