@@ -1,4 +1,3 @@
-
 # product:calculate cartesian product of input iterables
 from itertools import product
 a=[1,2]
