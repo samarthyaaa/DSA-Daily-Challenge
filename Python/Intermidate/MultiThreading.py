@@ -1,5 +1,4 @@
 from threading import Thread
-
 def square_numbers():
     for i in range(100):
         i*i
@@ -7,7 +6,6 @@ def square_numbers():
 if __name__ == '__main__':
     threads=[]
     nums_threads=10
-
     # to create threads
     for i in range(nums_threads):
         thread = Thread(target=square_numbers)
