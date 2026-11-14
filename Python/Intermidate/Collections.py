@@ -5,23 +5,23 @@ a="aaaaabbbbccc"
 my_counter=Counter(a)
 print(my_counter)                  # prints Counter({'a': 5, 'b': 4, 'c': 3})
 print(my_counter.items())          # returns dict_items of key-count pairs
-print(my_counter.keys())           # returns dict_keys of unique elements
+print(my_counter.keys())           # returns dict_keys of unique element
 print(my_counter.values())         
 print(my_counter.most_common(1))    
 print(list(my_counter.elements())) 
-# 2. namedtuple
+# namedtuple
 Point=namedtuple("Point","x,y")
 pt=Point(1,-4)
 print(pt)#x=1, y=-4
 print(pt.x,pt.y) 
-# 3. OrderedDict
+# OrderedDict
 ordered_dict=ordereddict()
 ordered_dict['b']=2
 ordered_dict['c']=3
 ordered_dict['d']=4
 ordered_dict['a']=1
 print(ordered_dict) # prints OrderedDict([('b', 2), ('c', 3), ('d', 4), ('a', 1)])
-# 4. defaultdict:automatically provides a default value for missing keys rather than raising a KeyError
+#defaultdict:automatically provides a default value for missing keys rather than raising a KeyError
 d=defaultdict(int) # default value factory for int returns 0
 d['a']=1
 d['b']=2
