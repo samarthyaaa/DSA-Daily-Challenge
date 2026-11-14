@@ -31,15 +31,10 @@ else:
 finally:
     print("cleanup complete executing finally block")
 
-
-
-# raise keyword is used to trigger custom errors manually
 try:
     raise exception("custom exception raised manually")
 except exception as error:
     print(error)
-
-# inherit from builtin Exception class to define custom exception types
 class dognotfoundexception(exception):
     pass
 
