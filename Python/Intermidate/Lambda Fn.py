@@ -1,4 +1,4 @@
-#LAMBDA - expressions and inbuilt functions
+#LAMBDA :expressions and inbuilt functions
 multiply = lambda x, y: x*y # CAN HAVE MORE THAN ONE ARG
 print(multiply(2,3))
 #map , filter , reduce - global fn
