@@ -46,7 +46,7 @@ def fibonacci(limit):
 fib=fibonacci(30)
 for i in fib:
     print(i)
-# generator expression
+# generator expressio
 mygenerator=(i for i in range(10) if i%2==0)
 for i in mygenerator:
     print(i)
